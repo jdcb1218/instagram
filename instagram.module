@@ -1,0 +1,42 @@
+<?php
+
+
+include_once 'includes/instagram-block.inc';
+
+
+/**
+ * Implements hook_help().
+ */
+function instagram_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#instagram':
+      return '<p>' . t('Configuracion modulo instagram', array('storage' => 'Configuracion modulo instagram' )) . '</p>';
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function instagram_permission() {
+  return array(
+    'administer instagram' =>  array(
+      'title' => t('Administer instagram'),
+      'description' => t('Perform administration instagram'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function instagram_theme($existing, $type, $theme, $path) {
+  $themes = array (
+    'instagram_template' => array(
+      'path' =>  drupal_get_path('module', 'instagram'),
+      'template' => 'templates/post',
+      'variables' => array(),
+      'arguments' => array(),
+    ),
+  );
+  return $themes;
+}

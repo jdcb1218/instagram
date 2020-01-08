@@ -1,0 +1,12 @@
+name = instagram
+description =  Evaluate actions instagram
+package = Procolombia-instagram
+core = 7.x
+dependencies[] = field
+;Config
+configure = admin/config/instagram
+; Information added by Drupal.org packaging script on 2019-01-24
+version = "7.x-2.12"
+core = "7.x"
+project = "rules"
+datestamp = "1548305586"
